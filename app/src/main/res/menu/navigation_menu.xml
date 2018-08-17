@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/home"
+        android:title="Home"
+        android:icon="@mipmap/baseline_home_white_48" />
+
+    <item android:id="@+id/ticketing"
+        android:title="Ticketing"
+        android:icon="@mipmap/ic_ticket_white_18dp" />
+
+    <item android:id="@+id/merchandise"
+        android:title="Merchandise"
+        android:icon="@mipmap/ic_tshirt_crew_white_18dp"/>
+
+    <item android:id="@+id/concessions"
+        android:title="Concessions"
+        android:icon="@mipmap/ic_hamburger_white_18dp"/>
+
+    <item android:id="@+id/notifs"
+        android:title="Notifications|Polls"
+        android:icon="@mipmap/baseline_notification_important_white_18"/>
+
+    <item android:id="@+id/fanZone"
+        android:title="Fan Zone"
+        android:icon="@mipmap/ic_launcher"/>
+
+    <item android:id="@+id/team"
+        android:title="The Team"
+        android:icon="@mipmap/ic_launcher"/>
+
+    <item android:id="@+id/partners"
+        android:title="Our partners (Sponsors)"
+        android:icon="@mipmap/baseline_business_center_white_18"/>
+
+    <item android:id="@+id/parking"
+        android:title="Parking"
+        android:icon="@mipmap/baseline_local_parking_white_18"/>
+
+    <item android:id="@+id/matchday"
+        android:title="MatchDay"
+        android:icon="@mipmap/ic_soccer_white_18dp"/>
+
+    <item android:id="@+id/socialM"
+        android:title="Social Media"
+        android:icon="@mipmap/ic_account_multiple_white_18dp"/>
+
+    <item android:id="@+id/support"
+        android:title="Info|Support"
+        android:icon="@mipmap/baseline_info_white_18"/>
+
+    <item android:id="@+id/stadInfo"
+        android:title="Stadium Information"
+        android:icon="@mipmap/ic_stadium_white_18dp"/>
+
+</menu>

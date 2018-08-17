@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "194219820104",
+    "firebase_url": "https://roar-29883.firebaseio.com",
+    "project_id": "roar-29883",
+    "storage_bucket": "roar-29883.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:194219820104:android:d7f5b1348661b4fd",
+        "android_client_info": {
+          "package_name": "com.example.marlowe.roarsports"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "194219820104-en6fihepdfo30l2m5tdij1867vau0rn3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.marlowe.roarsports",
+            "certificate_hash": "d518e723d0f05becdd29112222c421e9b2f040bc"
+          }
+        },
+        {
+          "client_id": "194219820104-4nc9cl9vag55o7rhgn92fltq4rmps93a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdy91wFWdNHsSlL9JqpR2tx_VncYRmhnE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "194219820104-4nc9cl9vag55o7rhgn92fltq4rmps93a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

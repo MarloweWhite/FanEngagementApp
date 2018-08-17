@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_commentary"
+        android:title="commentary"
+        android:icon="@drawable/ic_radiobox_marked_white_24dp"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/myAccount"
+        android:title="commentary"
+        android:icon="@drawable/com_facebook_profile_picture_blank_square"
+        app:showAsAction="always" />
+
+</menu>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="344dp"
+        android:layout_height="181dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="39dp"
+        android:contentDescription="TODO"
+        app:srcCompat="@drawable/border" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="343dp"
+        android:layout_height="195dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:contentDescription="TODO"
+        app:srcCompat="@drawable/border" />
+
+    <ImageButton
+        android:id="@+id/clubFacebook"
+        android:layout_width="74dp"
+        android:layout_height="72dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="53dp"
+        android:background="@drawable/round_button_red"
+        android:contentDescription="TODO"
+        android:src="@drawable/com_facebook_button_icon" />
+
+    <ImageButton
+        android:id="@+id/clubTwitter"
+        android:layout_width="74dp"
+        android:layout_height="72dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/clubYoutube"
+        android:layout_marginEnd="53dp"
+        android:background="@drawable/round_button_red"
+        android:contentDescription="TODO"
+        android:src="@mipmap/ic_twitter_white_48dp" />
+
+    <ImageButton
+        android:id="@+id/clubYoutube"
+        android:layout_width="74dp"
+        android:layout_height="72dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/clubInsta"
+        android:layout_marginBottom="134dp"
+        android:background="@drawable/round_button_red"
+        android:contentDescription="TODO"
+        android:src="@mipmap/ic_youtube_white_48dp" />
+
+    <ImageButton
+        android:id="@+id/clubInsta"
+        android:layout_width="76dp"
+        android:layout_height="71dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/roarTwitter"
+        android:layout_marginTop="53dp"
+        android:background="@drawable/round_button_red"
+        android:contentDescription="TODO"
+        android:src="@mipmap/ic_instagram_white_48dp" />
+
+    <ImageButton
+        android:id="@+id/roarFacebook"
+        android:layout_width="74dp"
+        android:layout_height="72dp"
+        android:layout_alignStart="@+id/clubTwitter"
+        android:layout_alignTop="@+id/roarTwitter"
+        android:background="@drawable/round_button_red"
+        android:contentDescription="TODO"
+        android:src="@drawable/com_facebook_button_icon_white" />
+
+    <ImageButton
+        android:id="@+id/roarTwitter"
+        android:layout_width="74dp"
+        android:layout_height="72dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="147dp"
+        android:background="@drawable/round_button_red"
+        android:contentDescription="TODO"
+        android:src="@mipmap/ic_twitter_white_48dp" />
+
+    <ImageButton
+        android:id="@+id/roarYoutube"
+        android:layout_width="74dp"
+        android:layout_height="72dp"
+        android:layout_alignStart="@+id/clubTwitter"
+        android:layout_alignTop="@+id/clubInsta"
+        android:background="@drawable/round_button_red"
+        android:contentDescription="TODO"
+        android:src="@mipmap/ic_youtube_white_48dp" />
+
+
+
+</RelativeLayout>
