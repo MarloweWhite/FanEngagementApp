@@ -22,7 +22,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_radiobox_marked_white_24dp"
         android:label="RoarSports"
         android:roundIcon="@drawable/roar_logo_red"
         android:supportsRtl="true"
