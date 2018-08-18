@@ -36,14 +36,6 @@ public class FragmentParking extends Fragment {
             }
         });
 
-        gettingHere.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-            }
-        });
-
         parkingDiagram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

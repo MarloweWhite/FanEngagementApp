@@ -28,7 +28,6 @@ public class ActivityGameSchedule extends AppCompatActivity implements Navigatio
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
 
-
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                 new FragmentHome()).commit();
 

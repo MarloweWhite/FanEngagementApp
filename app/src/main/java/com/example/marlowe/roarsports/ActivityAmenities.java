@@ -1,8 +1,6 @@
 package com.example.marlowe.roarsports;
 
 import android.app.ListActivity;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
@@ -19,19 +17,15 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
 import com.google.firebase.auth.FirebaseUser;
 
-import static com.example.marlowe.roarsports.ActivityRegistration.NAME2;
 
 public class ActivityAmenities extends ListActivity  {
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
-    private NavigationView navigationView;
-    TextView uName;
     FirebaseUser user;
-    Firebase mRef;
+
 
     String[] AMENITIES = {"Toilet Info", "Concessions Info", "Support desks", "Healthcare", "Gates(entry, exit)", "Shops", "Bars", "Hospitality", "Disabled access", "Sponsor activation areas", "Fan zones"};
     int[] IMAGES = {R.mipmap.baseline_wc_white_48, R.mipmap.baseline_local_cafe_white_48, R.mipmap.baseline_record_voice_over_white_48, R.mipmap.baseline_local_hospital_white_48, R.mipmap.baseline_meeting_room_white_48,

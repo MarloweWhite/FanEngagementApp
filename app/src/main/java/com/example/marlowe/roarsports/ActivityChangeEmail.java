@@ -6,14 +6,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.NavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.client.Firebase;
@@ -27,14 +24,13 @@ import com.google.firebase.auth.FirebaseUser;
 
 import static com.example.marlowe.roarsports.ActivityMain.NAME;
 import static com.example.marlowe.roarsports.ActivityMain.PASSWORD;
-import static com.example.marlowe.roarsports.ActivityRegistration.NAME2;
 
 public class ActivityChangeEmail extends AppCompatActivity{
 
     private EditText emailEdit;
     FirebaseAuth auth;
     private Button changeEmail;
-    Firebase mRef;
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

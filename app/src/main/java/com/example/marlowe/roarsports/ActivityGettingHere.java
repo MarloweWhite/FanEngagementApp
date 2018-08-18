@@ -3,7 +3,6 @@ package com.example.marlowe.roarsports;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -22,7 +21,6 @@ public class ActivityGettingHere extends AppCompatActivity {
         textView = findViewById(R.id.textView15);
 
         //textView.setText("\u2022" + R.string.Latin);
-
 
         directionsFromLocation = findViewById(R.id.directionsFromLocation);
 

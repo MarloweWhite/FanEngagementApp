@@ -21,7 +21,6 @@ import com.bumptech.glide.Glide;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.storage.FirebaseStorage;
@@ -33,11 +32,9 @@ public class ActivityHome extends AppCompatActivity implements NavigationView.On
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     private FirebaseAuth mAuth;
-    FirebaseAuth.AuthStateListener mAuthStateListener, mAuthListener ;
     FirebaseUser user;
     String userID;
     Firebase mRef, mRefEmail, RefDp;
-    GoogleApiClient mGoogleApiClient;
 
 
 
@@ -108,7 +105,6 @@ public class ActivityHome extends AppCompatActivity implements NavigationView.On
 
             navigationView = findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
-
 
 
     }

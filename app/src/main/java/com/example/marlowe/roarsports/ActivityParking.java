@@ -29,11 +29,7 @@ public class ActivityParking extends AppCompatActivity implements NavigationView
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
 
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
-
 
     }
 

@@ -23,7 +23,6 @@ public class ActivityStatusEdit extends AppCompatActivity {
     private Button send;
     private Button refresh;
     private Button contin;
-    private Button remove;
     private FirebaseAuth mAuth;
     private FirebaseUser user;
 
@@ -98,8 +97,6 @@ public class ActivityStatusEdit extends AppCompatActivity {
                     }
                 }
             });
-
-
     }
 
     private void setInfo(){

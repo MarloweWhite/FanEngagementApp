@@ -20,18 +20,13 @@ public class ActivityConcessions extends AppCompatActivity{
         setContentView(R.layout.activity_concessions);
 
 
-
         mDrawerLayout = findViewById(R.id.drawer_layout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
 
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
 
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
-
 
     }
 

@@ -25,7 +25,6 @@ public class ActivitySocialMedia extends AppCompatActivity {
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
 
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 

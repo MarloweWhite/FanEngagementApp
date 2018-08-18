@@ -29,7 +29,6 @@ public class ActivityStatus extends AppCompatActivity {
     private Button send;
     private Button refresh;
     private Button contin;
-    private Button remove;
     private FirebaseAuth mAuth;
 
     @Override
@@ -45,7 +44,6 @@ public class ActivityStatus extends AppCompatActivity {
         send = findViewById(R.id.btn_send);
         refresh = findViewById(R.id.btn_refresh);
         contin = findViewById(R.id.btn_cont);
-        remove = findViewById(R.id.removal);
 
 
         send.setOnClickListener(new View.OnClickListener() {
@@ -118,8 +116,6 @@ public class ActivityStatus extends AppCompatActivity {
                 }
             }
         });
-
-
 
     }
 

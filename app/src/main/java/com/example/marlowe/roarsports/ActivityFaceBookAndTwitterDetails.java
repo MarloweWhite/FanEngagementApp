@@ -36,15 +36,11 @@ public class ActivityFaceBookAndTwitterDetails extends AppCompatActivity {
     EditText socialLastName, socialFirstName;
     ImageView imageView;
     private FirebaseAuth mAuth;
-    FirebaseAuth.AuthStateListener firebaseAuthListener;
-    final int PIC_CROP = 1;
     FirebaseStorage storage;
-    private Firebase mRef;
     StorageReference mountainsRef, mountainImagesRef;
-    String photo;
     FirebaseUser user;
     StorageReference storageRef;
-    Uri uri;
+
 
 
     @Override
@@ -55,12 +51,8 @@ public class ActivityFaceBookAndTwitterDetails extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         user = FirebaseAuth.getInstance().getCurrentUser();
 
-
-
             storage = FirebaseStorage.getInstance();
-            ;
             storageRef = FirebaseStorage.getInstance().getReference();
-
 
             socialSubmit = findViewById(R.id.socialSubmit);
             socialFirstName = findViewById(R.id.socialFirstName);
@@ -86,8 +78,6 @@ public class ActivityFaceBookAndTwitterDetails extends AppCompatActivity {
                     } else {
                         dataUpload();
                     }
-
-
 
                     Intent intent = new Intent(ActivityFaceBookAndTwitterDetails.this, ActivityHome.class);
                     startActivity(intent);

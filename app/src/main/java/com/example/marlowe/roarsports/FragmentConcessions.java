@@ -32,8 +32,5 @@ public class FragmentConcessions extends Fragment {
                 Toast.makeText(getActivity().getApplicationContext(), "BUY CONCESSIONS", Toast.LENGTH_LONG).show();
             }
         });
-
-
-
     }
 }

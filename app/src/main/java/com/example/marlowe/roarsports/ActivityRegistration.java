@@ -1,7 +1,5 @@
 package com.example.marlowe.roarsports;
 
-import android.app.ProgressDialog;
-import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -43,23 +41,16 @@ public class ActivityRegistration extends AppCompatActivity {
     private Button mRegister, remove;
     private ImageView imageView;
     private StorageReference storageReference;
-    private static final int GALLERY_INTENT = 2;
-    private ProgressDialog progressDialog;
-    Uri uri;
-    private SharedPreferences sharedPreferences, sharedPreferences2;
-    public static final String MY_SHARED3 = "MySharedPreference3";
-    public static final String PHOTO = "photo";
+    private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
     public static final String MY_SHARED2 = "MySharedPreference2";
     public static final String NAME2 = "name2";
     public static final String PASSWORD2 = "password2";
     private FirebaseAuth mAuth;
     FirebaseAuth.AuthStateListener firebaseAuthListener;
-    final int PIC_CROP = 1;
     FirebaseStorage storage;
     private Firebase mRef;
     StorageReference mountainsRef, mountainImagesRef;
-    String photo;
     FirebaseUser user;
     StorageReference storageRef;
 
@@ -77,7 +68,6 @@ public class ActivityRegistration extends AppCompatActivity {
         storage = FirebaseStorage.getInstance();;
         storageReference = FirebaseStorage.getInstance().getReference();
         imageView = findViewById(R.id.profilePhoto);
-        progressDialog = new ProgressDialog(this);
 
 
         firebaseAuthListener = new FirebaseAuth.AuthStateListener() {

@@ -27,17 +27,12 @@ public class FragmentHome extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
-
         pTickets = view.findViewById(R.id.purchaseTickets);
         mTickets = view.findViewById(R.id.myTickets);
         seatDiagram = view.findViewById(R.id.seatingDiagram);
         ticketOffice = view.findViewById(R.id.ticketOffice);
         activeSchedule = view.findViewById(R.id.activitySchedule);
         gameSchedule = view.findViewById(R.id.gameSchedule);
-
-
-
 
         activeSchedule.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -10,12 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class FragmentSponsor extends ListFragment {
 
@@ -39,8 +37,6 @@ public class FragmentSponsor extends ListFragment {
         CustomAdapter customAdapter = new CustomAdapter();
 
         listView.setAdapter(customAdapter);
-
-
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -66,9 +62,6 @@ public class FragmentSponsor extends ListFragment {
                 }
             }
         });
-
-
-
     }
 
     class CustomAdapter extends BaseAdapter{
@@ -92,7 +85,6 @@ public class FragmentSponsor extends ListFragment {
         public View getView(int i, View view, ViewGroup parent) {
 
             view = getLayoutInflater().inflate(R.layout.customlistview, null);
-
 
             if (i % 2 == 1){
                 view.setBackgroundColor(getResources().getColor(R.color.black));

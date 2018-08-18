@@ -32,9 +32,6 @@ public class ActivityForgottenPassword extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgotten_password);
 
-
-
-
         mDrawerLayout = findViewById(R.id.drawer_layout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
 
@@ -68,17 +65,12 @@ public class ActivityForgottenPassword extends AppCompatActivity{
             }
         });
 
-
-
-
-
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         int id = item.getItemId();
-
 
         return true;
     }

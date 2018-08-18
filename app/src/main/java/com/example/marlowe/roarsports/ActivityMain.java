@@ -55,13 +55,11 @@ import java.util.Arrays;
 
 
 public class ActivityMain extends AppCompatActivity {
-    private Button mEmailSign, mCreateAccount, mTwitter, mFacebook;
+    private Button mEmailSign, mCreateAccount;
     private EditText mEmail, mPassword;
     private TextView textView;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
-    private FirebaseDatabase mFirebaseDatabase;
-    private DatabaseReference mDatabaseReference;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
     public static final String MY_SHARED= "MySharedPreference";
@@ -110,9 +108,6 @@ public class ActivityMain extends AppCompatActivity {
         loginButton.setReadPermissions(Arrays.asList("email"));
 
         mAuth = FirebaseAuth.getInstance();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        mFirebaseDatabase = FirebaseDatabase.getInstance();
-        mDatabaseReference = mFirebaseDatabase.getReference();
         textView = findViewById(R.id.forgotPassword);
 
 
@@ -236,15 +231,6 @@ public class ActivityMain extends AppCompatActivity {
                 });
     }
 
-
-
-
-
-
-
-
-
-
     private void handleFacebookToken(AccessToken accessToken) {
 
         AuthCredential credential = FacebookAuthProvider.getCredential(accessToken.getToken());
@@ -266,7 +252,6 @@ public class ActivityMain extends AppCompatActivity {
                                         Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(ActivityMain.this, ActivityHome.class);
                                 startActivity(intent);
-
                             }
                         } else {
                             // If sign in fails, display a message to the user.

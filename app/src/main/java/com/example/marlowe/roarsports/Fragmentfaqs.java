@@ -3,12 +3,10 @@ package com.example.marlowe.roarsports;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -16,7 +14,6 @@ import android.widget.TextView;
 public class Fragmentfaqs extends ListFragment {
 
     String[] FAQS = {"Question 1", "Question 2","Question 3","Question 4","Question 5","Question 6","Question 7","Question 8","Question 9","Question 10", };
-
 
     @Nullable
     @Override
@@ -65,8 +62,6 @@ public class Fragmentfaqs extends ListFragment {
             TextView textView = view.findViewById(R.id.parkingTipsOptions);
             textView.setText(FAQS[i]);
             return view;
-
-
         }
     }
 }

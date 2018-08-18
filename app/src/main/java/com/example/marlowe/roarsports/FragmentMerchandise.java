@@ -37,8 +37,5 @@ public class FragmentMerchandise extends Fragment {
                 startActivity(intent);
             }
         });
-
-
-
     }
 }
