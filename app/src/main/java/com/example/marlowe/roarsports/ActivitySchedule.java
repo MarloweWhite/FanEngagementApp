@@ -33,7 +33,7 @@ public class ActivitySchedule extends AppCompatActivity implements NavigationVie
         mToggle.syncState();
 
         WebView webView = findViewById(R.id.webView);
-        webView.loadUrl("https://twitter.com/Marloni_um");
+        webView.loadUrl("https://twitter.com/roarsportsfans");
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
 

@@ -39,7 +39,7 @@ public class FragmentSocialMedia extends Fragment {
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                intent.setData(Uri.parse("http://roarsports.net/"));
+                intent.setData(Uri.parse("https://www.facebook.com/roarsportsfans/"));
                 startActivity(intent);
             }
         });
@@ -49,7 +49,7 @@ public class FragmentSocialMedia extends Fragment {
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                intent.setData(Uri.parse("http://roarsports.net/"));
+                intent.setData(Uri.parse("https://www.instagram.com/roar.sports/"));
                 startActivity(intent);
             }
         });
@@ -59,7 +59,7 @@ public class FragmentSocialMedia extends Fragment {
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                intent.setData(Uri.parse("http://roarsports.net/"));
+                intent.setData(Uri.parse("https://twitter.com/roarsportsfans"));
                 startActivity(intent);
             }
         });
@@ -79,7 +79,7 @@ public class FragmentSocialMedia extends Fragment {
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                intent.setData(Uri.parse("http://roarsports.net/"));
+                intent.setData(Uri.parse("https://www.facebook.com/roarsportsfans/"));
                 startActivity(intent);
             }
         });
@@ -89,7 +89,7 @@ public class FragmentSocialMedia extends Fragment {
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                intent.setData(Uri.parse("http://roarsports.net/"));
+                intent.setData(Uri.parse("https://twitter.com/roarsportsfans"));
                 startActivity(intent);
             }
         });
@@ -99,7 +99,7 @@ public class FragmentSocialMedia extends Fragment {
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                intent.setData(Uri.parse("http://roarsports.net/"));
+                intent.setData(Uri.parse("https://www.instagram.com/roar.sports/"));
                 startActivity(intent);
             }
         });
