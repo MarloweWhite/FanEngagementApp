@@ -104,7 +104,7 @@ public class ActivityFaceBookAndTwitterDetails extends AppCompatActivity {
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
             if (resultCode == RESULT_OK) {
                 Uri resultUri = result.getUri();
-                imageView.setImageURI(resultUri);
+                Picasso.with(ActivityFaceBookAndTwitterDetails.this).load(resultUri).fit().into(imageView);
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 Exception error = result.getError();
             }

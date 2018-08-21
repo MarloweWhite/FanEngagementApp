@@ -31,12 +31,14 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import com.squareup.picasso.Picasso;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.io.ByteArrayOutputStream;
 
 public class ActivityEditProfile extends AppCompatActivity {
+    // to fix comitt
 
     private Button signOutButton, changePasswordButton, changeEmaildButton, changeDisplayButton, delete;
     private ImageView imageView;
@@ -143,14 +145,18 @@ public class ActivityEditProfile extends AppCompatActivity {
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 if (task.isSuccessful()) {
                                                     LoginManager.getInstance().logOut();
-                                                    Toast.makeText(ActivityEditProfile.this, "ACCOUNT DELETED", Toast.LENGTH_LONG).show();
+                                                    Toast.makeText(ActivityEditProfile.this, "Account deleted", Toast.LENGTH_LONG).show();
                                                     Intent intent = new Intent(ActivityEditProfile.this, ActivityMain.class);
                                                     startActivity(intent);
                                                     finish();
+                                                } else {
+                                                    Toast.makeText(ActivityEditProfile.this, "Account not deleted, Please sign out and then log back in to complete action", Toast.LENGTH_LONG).show();
                                                 }
                                             }
                                         });
                                 break;
+
+
 
                             case DialogInterface.BUTTON_NEGATIVE:
                                 //No button clicked
@@ -183,7 +189,7 @@ public class ActivityEditProfile extends AppCompatActivity {
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
             if (resultCode == RESULT_OK) {
                 Uri resultUri = result.getUri();
-                imageView.setImageURI(resultUri);
+                Picasso.with(ActivityEditProfile.this).load(resultUri).fit().into(imageView);
                 dataUpload();
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 Exception error = result.getError();
@@ -250,4 +256,7 @@ public class ActivityEditProfile extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+
+
 }

@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.facebook.login.LoginManager;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -94,5 +95,6 @@ public class ActivityChangeEmail extends AppCompatActivity{
         Intent intent = new Intent(ActivityChangeEmail.this, ActivityEditProfile.class);
         startActivity(intent);
     }
+
 }
 

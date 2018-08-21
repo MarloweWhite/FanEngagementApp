@@ -53,4 +53,9 @@
         android:title="Stadium Information"
         android:icon="@mipmap/ic_stadium_white_18dp"/>
 
+    <item android:id="@+id/rateUs"
+        android:title="Rate Us"
+        android:icon="@drawable/ic_rate"
+        />
+
 </menu>

@@ -1,6 +1,9 @@
 package com.example.marlowe.roarsports;
 
+import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -18,6 +21,7 @@ import android.widget.TextView;
 
 
 import com.bumptech.glide.Glide;
+import com.facebook.login.LoginManager;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
@@ -35,6 +39,7 @@ public class ActivityHome extends AppCompatActivity implements NavigationView.On
     FirebaseUser user;
     String userID;
     Firebase mRef, mRefEmail, RefDp;
+    Context context = ActivityHome.this;
 
 
 
@@ -178,6 +183,20 @@ public class ActivityHome extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new FragmentHome()).commit();
                 break;
+            case R.id.rateUs:
+                Uri uri = Uri.parse("market://details?id=" + context.getPackageName());
+                Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
+                // To count with Play market backstack, After pressing back button,
+                // to taken back to our application, we need to add following flags to intent.
+                goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY |
+                        Intent.FLAG_ACTIVITY_NEW_DOCUMENT |
+                        Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+                try {
+                    startActivity(goToMarket);
+                } catch (ActivityNotFoundException e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("http://play.google.com/store/apps/details?id=" + context.getPackageName())));
+                }
         }
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
@@ -188,4 +207,6 @@ public class ActivityHome extends AppCompatActivity implements NavigationView.On
         super.onBackPressed();
         Log.d("Lol he tried leave", "He tried leave bro ");
     }
+
+
 }

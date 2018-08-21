@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.facebook.login.LoginManager;
 import com.firebase.client.Firebase;
 import com.firebase.ui.auth.ui.User;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -76,6 +77,7 @@ public class ActivityChangeDisplay extends AppCompatActivity {
         Intent intent = new Intent(ActivityChangeDisplay.this, ActivityEditProfile.class);
         startActivity(intent);
     }
+
 }
 
 
