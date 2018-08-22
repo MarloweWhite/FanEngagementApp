@@ -197,6 +197,10 @@ public class ActivityHome extends AppCompatActivity implements NavigationView.On
                     startActivity(new Intent(Intent.ACTION_VIEW,
                             Uri.parse("http://play.google.com/store/apps/details?id=" + context.getPackageName())));
                 }
+            case R.id.share:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new FragmentShare()).commit();
+                break;
         }
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
