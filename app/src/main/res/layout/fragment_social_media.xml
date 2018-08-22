@@ -35,7 +35,7 @@
         android:layout_marginBottom="53dp"
         android:background="@drawable/round_button_red"
         android:contentDescription="TODO"
-        android:src="@drawable/com_facebook_button_icon" />
+        android:src="@drawable/ic_facebook_box_white_48dp" />
 
     <ImageButton
         android:id="@+id/clubTwitter"
@@ -78,7 +78,7 @@
         android:layout_alignTop="@+id/roarTwitter"
         android:background="@drawable/round_button_red"
         android:contentDescription="TODO"
-        android:src="@drawable/com_facebook_button_icon_white" />
+        android:src="@drawable/ic_facebook_box_white_48dp" />
 
     <ImageButton
         android:id="@+id/roarTwitter"

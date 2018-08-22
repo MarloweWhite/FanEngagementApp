@@ -9,12 +9,12 @@
         android:id="@+id/facebookShare"
         android:layout_width="74dp"
         android:layout_height="72dp"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="143dp"
+        android:layout_marginTop="89dp"
         android:background="@drawable/round_button_red"
         android:contentDescription="TODO"
-        android:src="@drawable/com_facebook_button_icon" />
+        android:src="@drawable/ic_facebook_box_white_48dp" />
 
     <ImageButton
         android:id="@+id/twitterShare"
@@ -22,7 +22,7 @@
         android:layout_height="72dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="171dp"
         android:background="@drawable/round_button_red"
         android:contentDescription="TODO"
         android:src="@mipmap/ic_twitter_white_48dp" />
@@ -31,10 +31,21 @@
         android:id="@+id/instaShare"
         android:layout_width="76dp"
         android:layout_height="71dp"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="204dp"
+        android:layout_marginBottom="187dp"
         android:background="@drawable/round_button_red"
         android:contentDescription="TODO"
         android:src="@mipmap/ic_instagram_white_48dp" />
+
+    <ImageButton
+        android:id="@+id/snapchatShare"
+        android:layout_width="74dp"
+        android:layout_height="72dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="104dp"
+        android:background="@drawable/round_button_red"
+        android:contentDescription="TODO"
+        android:src="@drawable/ic_snapchat_white_48dp" />
 </RelativeLayout>

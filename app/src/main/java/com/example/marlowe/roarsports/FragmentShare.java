@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookSdk;
@@ -24,7 +25,7 @@ import com.twitter.sdk.android.tweetcomposer.TweetComposer;
 
 public class FragmentShare  extends Fragment {
 
-    ImageButton facebookShare, twitterShare, instagramShare;
+    ImageButton facebookShare, twitterShare, instagramShare, snapchatShare;
     CallbackManager callbackManager;
     ShareDialog shareDialog;
     Context context = getActivity();
@@ -45,6 +46,8 @@ public class FragmentShare  extends Fragment {
         facebookShare = (ImageButton) view.findViewById(R.id.facebookShare);
         twitterShare = (ImageButton) view.findViewById(R.id.twitterShare);
         instagramShare = (ImageButton) view.findViewById(R.id.instaShare);
+        snapchatShare = (ImageButton) view.findViewById(R.id.snapchatShare);
+
 
         callbackManager = CallbackManager.Factory.create();
         shareDialog = new ShareDialog(getActivity());
@@ -104,9 +107,42 @@ public class FragmentShare  extends Fragment {
                 ClipData clip = ClipData.newPlainText(label, text);
                 clipboard.setPrimaryClip(clip);
 
+                Toast.makeText(getActivity(), "Select instagram from the options", Toast.LENGTH_LONG).show();
                 // Broadcast the Intent.
                 startActivity(Intent.createChooser(share, "Share to"));
 
+            }
+        });
+
+        snapchatShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String type = "image/*";
+
+                Intent share = new Intent(Intent.ACTION_SEND);
+
+                // Set the MIME type
+                share.setType(type);
+
+                // Create the URI from the media
+                Uri imageUri = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE +
+                        "://" + getResources().getResourcePackageName(R.drawable.roar_logo_red)
+                        + '/' + getResources().getResourceTypeName(R.drawable.roar_logo_red) + '/' + getResources().getResourceEntryName(R.drawable.roar_logo_red) );
+
+
+                // Add the URI to the Intent.
+                share.putExtra(Intent.EXTRA_STREAM, imageUri);
+
+                //Copy clipboard text
+                String label = "Paste this text";
+                String text = "Join me and support(enter team) using Roar";
+                ClipboardManager clipboard = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText(label, text);
+                clipboard.setPrimaryClip(clip);
+
+                Toast.makeText(getActivity(), "Select snapchat from the options", Toast.LENGTH_LONG).show();
+                // Broadcast the Intent.
+                startActivity(Intent.createChooser(share, "Share to"));
             }
         });
 
