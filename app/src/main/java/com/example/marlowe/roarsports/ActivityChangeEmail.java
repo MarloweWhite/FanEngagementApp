@@ -55,10 +55,12 @@ public class ActivityChangeEmail extends AppCompatActivity{
                 //To remove the error on changing the email after registartion would have to be done by changing
                 //the shared preference used however changing the email after on login would be unable to be done
 
+                //retrieves details from db
                 SharedPreferences sharedPreferences = getSharedPreferences("MySharedPreference", Context.MODE_PRIVATE);
                 String names = sharedPreferences.getString(NAME, "");
                 String passwords = sharedPreferences.getString(PASSWORD, "");
 
+                //authenticates user again
                 AuthCredential credential = EmailAuthProvider
                         .getCredential(names, passwords);
                 user.reauthenticate(credential)

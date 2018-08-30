@@ -54,8 +54,6 @@ public class ActivityAmenities extends ListActivity  {
         mToggle.syncState();
 
 
-
-
     }
 
 

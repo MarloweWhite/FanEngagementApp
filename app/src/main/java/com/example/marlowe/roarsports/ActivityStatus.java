@@ -152,6 +152,6 @@ public class ActivityStatus extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(ActivityStatus.this, "Please ", Toast.LENGTH_LONG).show();
+        Toast.makeText(ActivityStatus.this, "Please press exit ", Toast.LENGTH_LONG).show();
     }
 }

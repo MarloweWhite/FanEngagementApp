@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.login.LoginManager;
 import com.firebase.client.Firebase;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -65,6 +66,7 @@ public class ActivityPasswordChange extends AppCompatActivity {
                                                 if (task.isSuccessful()) {
                                                     Toast.makeText(ActivityPasswordChange.this, "Password updated", Toast.LENGTH_LONG).show();
                                                     FirebaseAuth.getInstance().signOut();
+                                                    LoginManager.getInstance().logOut();
                                                     startActivity(new Intent(ActivityPasswordChange.this, ActivityMain.class));
                                                     finish();
                                                 } else {

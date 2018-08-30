@@ -50,7 +50,7 @@ public class ActivityRegistration extends AppCompatActivity {
     FirebaseAuth.AuthStateListener firebaseAuthListener;
     FirebaseStorage storage;
     private Firebase mRef;
-    StorageReference mountainsRef, mountainImagesRef;
+    StorageReference imageRef, displayImagesRef;
     FirebaseUser user;
     StorageReference storageRef;
 
@@ -63,13 +63,11 @@ public class ActivityRegistration extends AppCompatActivity {
         mRef = new Firebase("https://roar-29883.firebaseio.com/");
         mAuth = FirebaseAuth.getInstance();
 
-
-
         storage = FirebaseStorage.getInstance();;
         storageReference = FirebaseStorage.getInstance().getReference();
         imageView = findViewById(R.id.profilePhoto);
 
-
+        //send users to status check if they are not null
         firebaseAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -83,6 +81,7 @@ public class ActivityRegistration extends AppCompatActivity {
             }
         };
 
+        //opens crop activity to choose photo
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,6 +101,7 @@ public class ActivityRegistration extends AppCompatActivity {
         remove = findViewById(R.id.removal);
 
 
+        //retrieves email and password from edit texts
         mRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
@@ -129,6 +129,7 @@ public class ActivityRegistration extends AppCompatActivity {
                             current_user_db.setValue(true);
 
 
+                            //adds details to firebase db
                             Map new_post = new HashMap();
                             new_post.put("Name", mFirstName.getText().toString() + mLastName.getText().toString());
                             new_post.put("email", mEmail.getText().toString());
@@ -184,19 +185,17 @@ public class ActivityRegistration extends AppCompatActivity {
 
         user = FirebaseAuth.getInstance().getCurrentUser();
 
-        // Create a storage reference from our app
+        // Create a storage reference from app
          storageRef = storage.getReferenceFromUrl("gs://roar-29883.appspot.com/Display Pics" );
 
-// Create a reference to "mountains.jpg"
-         mountainsRef = storageRef.child(user.getUid());
+        // Create a reference
+        imageRef = storageRef.child(user.getUid());
 
+        displayImagesRef = storageRef.child("Photos").child(String.valueOf(imageRef));
 
-// Create a reference to 'images/mountains.jpg'
-         mountainImagesRef = storageRef.child("Photos").child(String.valueOf(mountainsRef));
-
-// While the file names are the same, the references point to different files
-        mountainsRef.getName().equals(mountainImagesRef.getName());    // true
-        mountainsRef.getPath().equals(mountainImagesRef.getPath());
+        // While the file names are the same, the references point to different files
+        imageRef.getName().equals(displayImagesRef.getName());    // true
+        imageRef.getPath().equals(displayImagesRef.getPath());
 
         imageView.setDrawingCacheEnabled(true);
         imageView.buildDrawingCache();
@@ -206,7 +205,7 @@ public class ActivityRegistration extends AppCompatActivity {
         final byte[] data = baos.toByteArray();
 
 
-        final UploadTask uploadTask = mountainsRef.putBytes(data);
+        final UploadTask uploadTask = imageRef.putBytes(data);
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception exception) {
@@ -238,5 +237,12 @@ public class ActivityRegistration extends AppCompatActivity {
         mAuth.removeAuthStateListener(firebaseAuthListener);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(ActivityRegistration.this, ActivityMain.class);
+        startActivity(intent);
+        finish();
+    }
 }
 

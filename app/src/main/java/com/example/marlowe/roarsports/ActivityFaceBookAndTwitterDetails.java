@@ -66,6 +66,7 @@ public class ActivityFaceBookAndTwitterDetails extends AppCompatActivity {
                     DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("RoarSports").child("users").child(user_id);
                     current_user_db.setValue(true);
 
+                    //adds details to firebase db
                     Map new_post = new HashMap();
                     new_post.put("Name", socialFirstName.getText().toString() + socialLastName.getText().toString());
                     new_post.put("email", mAuth.getCurrentUser().getEmail());
@@ -113,17 +114,14 @@ public class ActivityFaceBookAndTwitterDetails extends AppCompatActivity {
 
             user = FirebaseAuth.getInstance().getCurrentUser();
 
-            // Create a storage reference from our app
+
             storageRef = storage.getReferenceFromUrl("gs://roar-29883.appspot.com/Display Pics");
 
-// Create a reference to "mountains.jpg"
             mountainsRef = storageRef.child(user.getUid());
 
-// Create a reference to 'images/mountains.jpg'
             mountainImagesRef = storageRef.child("Photos").child(String.valueOf(mountainsRef));
 
-// While the file names are the same, the references point to different files
-            mountainsRef.getName().equals(mountainImagesRef.getName());    // true
+            mountainsRef.getName().equals(mountainImagesRef.getName());
             mountainsRef.getPath().equals(mountainImagesRef.getPath());
 
             imageView.setDrawingCacheEnabled(true);
@@ -145,8 +143,7 @@ public class ActivityFaceBookAndTwitterDetails extends AppCompatActivity {
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     // taskSnapshot.getMetadata() contains file metadata such as size, content-type, and download URL.
                     Toast.makeText(ActivityFaceBookAndTwitterDetails.this, "Profile picture uploaded", Toast.LENGTH_LONG).show();
-                    //Firebase mRefDisplay = mRef.child("Display pic");
-                    //mRefDisplay.setValue(bitmap);
+
 
                 }
             });
