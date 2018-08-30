@@ -130,8 +130,7 @@ public class ActivityRegistration extends AppCompatActivity {
 
 
                             Map new_post = new HashMap();
-                            new_post.put("first name", mFirstName.getText().toString());
-                            new_post.put("last name", mLastName.getText().toString());
+                            new_post.put("Name", mFirstName.getText().toString() + mLastName.getText().toString());
                             new_post.put("email", mEmail.getText().toString());
                             new_post.put("dp", "gs://roar-29883.appspot.com/Display Pics" + "/" + user_id );
 

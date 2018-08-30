@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.bumptech.glide.Glide;
@@ -63,7 +64,7 @@ public class ActivityHome extends AppCompatActivity implements NavigationView.On
             final ImageView imageView = (ImageView) headerView.findViewById(R.id.loggedInDp);
 
 
-            mRef = new Firebase("https://roar-29883.firebaseio.com/RoarSports/users/" + user + "/" + "first name");
+            mRef = new Firebase("https://roar-29883.firebaseio.com/RoarSports/users/" + user + "/" + "Name");
             mRefEmail = new Firebase("https://roar-29883.firebaseio.com/RoarSports/users/" + user + "/" + "email");
             RefDp = new Firebase("gs://roar-29883.appspot.com/Display Pics/" + user);
             String link = "gs://roar-29883.appspot.com/Display Pics/" + user;
@@ -126,6 +127,8 @@ public class ActivityHome extends AppCompatActivity implements NavigationView.On
             Intent intent = new Intent(ActivityHome.this, ActivityEditProfile.class);
             startActivity(intent);
             finish();
+        } else if (id == R.id.action_commentary){
+            Toast.makeText(ActivityHome.this, "Action commentary", Toast.LENGTH_LONG).show();
         }
         return super.onOptionsItemSelected(item);
     }

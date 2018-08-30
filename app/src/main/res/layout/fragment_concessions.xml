@@ -18,14 +18,14 @@
 
     <Button
         android:id="@+id/buyConcessions"
-        android:layout_width="108dp"
-        android:layout_height="98dp"
+        android:layout_width="142dp"
+        android:layout_height="121dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="21dp"
         android:background="@drawable/rounded_button"
         android:drawableTop="@mipmap/baseline_fastfood_white_48"
-        android:text="Purchase tickets"
+        android:text="Purchase concessions"
         android:textColor="@color/white"
         android:textStyle="bold" />
 
@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="146dp"
+        android:layout_marginBottom="154dp"
         android:text="Here you can access locations in the stadium concessions. Tap the icon to see whats availible"
         android:textColor="@color/white"
         android:textStyle="bold" />

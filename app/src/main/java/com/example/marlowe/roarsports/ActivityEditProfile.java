@@ -175,9 +175,9 @@ public class ActivityEditProfile extends AppCompatActivity {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CropImage.activity()
-                        .setGuidelines(CropImageView.Guidelines.ON)
-                        .start(ActivityEditProfile.this);
+                //CropImage.activity()
+                     //   .setGuidelines(CropImageView.Guidelines.ON)
+                     //   .start(ActivityEditProfile.this);
             }
         });
 
@@ -190,14 +190,14 @@ public class ActivityEditProfile extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 Uri resultUri = result.getUri();
                 Picasso.with(ActivityEditProfile.this).load(resultUri).fit().into(imageView);
-                dataUpload();
+                //dataUpload();
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 Exception error = result.getError();
             }
         }
     }
 
-    private void dataUpload() {
+  /*  private void dataUpload() {
 
         user = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -236,7 +236,7 @@ public class ActivityEditProfile extends AppCompatActivity {
                 Toast.makeText(ActivityEditProfile.this, "Profile picture updated", Toast.LENGTH_LONG).show();
             }
         });
-    }
+    }*/
 
 
 

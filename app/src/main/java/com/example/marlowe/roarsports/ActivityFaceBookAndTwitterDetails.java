@@ -67,8 +67,7 @@ public class ActivityFaceBookAndTwitterDetails extends AppCompatActivity {
                     current_user_db.setValue(true);
 
                     Map new_post = new HashMap();
-                    new_post.put("first name", socialFirstName.getText().toString());
-                    new_post.put("last name", socialLastName.getText().toString());
+                    new_post.put("Name", socialFirstName.getText().toString() + socialLastName.getText().toString());
                     new_post.put("email", mAuth.getCurrentUser().getEmail());
 
                     current_user_db.setValue(new_post);

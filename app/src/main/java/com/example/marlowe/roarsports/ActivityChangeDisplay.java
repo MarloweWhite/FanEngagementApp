@@ -54,8 +54,7 @@ public class ActivityChangeDisplay extends AppCompatActivity {
                 String user = mAuth.getCurrentUser().getEmail();
                 DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("RoarSports").child("users").child(user_id);
                 Map new_post = new HashMap();
-                new_post.put("first name", firstNameEdit.getText().toString());
-                new_post.put("last name", lastNameEdit.getText().toString());
+                new_post.put("Name", firstNameEdit.getText().toString() + lastNameEdit.getText().toString());
                 new_post.put("email", user);
                 databaseReference.setValue(new_post)
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
