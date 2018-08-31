@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.login.LoginManager;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -26,9 +27,7 @@ import static com.example.marlowe.roarsports.ActivityRegistration.PASSWORD2;
 public class ActivityStatus extends AppCompatActivity {
 
     private TextView email, status, uid;
-    private Button send;
-    private Button refresh;
-    private Button contin;
+    private Button send, refresh, contin, exit;
     private FirebaseAuth mAuth;
 
     @Override
@@ -43,6 +42,7 @@ public class ActivityStatus extends AppCompatActivity {
         uid = findViewById(R.id.txt_uid);
         send = findViewById(R.id.btn_send);
         refresh = findViewById(R.id.btn_refresh);
+        exit = findViewById(R.id.btn_exit);
         contin = findViewById(R.id.btn_cont);
 
 
@@ -94,6 +94,26 @@ public class ActivityStatus extends AppCompatActivity {
             }
         });
 
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                user.delete()
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    LoginManager.getInstance().logOut();
+                                    Toast.makeText(ActivityStatus.this, "Account deleted", Toast.LENGTH_LONG).show();
+                                    Intent intent = new Intent(ActivityStatus.this, ActivityMain.class);
+                                    startActivity(intent);
+                                    finish();
+                            }
+                         }
+
+                    });
+                 }
+        });
     }
 
     private void startSignIn() {

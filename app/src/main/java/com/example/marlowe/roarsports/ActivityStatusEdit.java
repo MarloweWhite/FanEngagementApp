@@ -120,8 +120,6 @@ public class ActivityStatusEdit extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
 
-                        //  Intent intent = new Intent(ActivityStatus.this, null);
-                        //    startActivity(intent);
                         mMyDialog.dismiss(); // dismiss AlertDialog
                     }
                 });
@@ -132,6 +130,6 @@ public class ActivityStatusEdit extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(ActivityStatusEdit.this, "Not happening ", Toast.LENGTH_LONG).show();
+        Toast.makeText(ActivityStatusEdit.this, "Invalid ", Toast.LENGTH_LONG).show();
     }
 }
