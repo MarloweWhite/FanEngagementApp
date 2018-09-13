@@ -36,10 +36,12 @@ import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class ActivityRegistration extends AppCompatActivity {
     private EditText mFirstName, mLastName, mEmail, mPassword, mPasswordConfirm;
     private Button mRegister, remove;
-    private ImageView imageView;
+    private CircleImageView imageView;
     private StorageReference storageReference;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;

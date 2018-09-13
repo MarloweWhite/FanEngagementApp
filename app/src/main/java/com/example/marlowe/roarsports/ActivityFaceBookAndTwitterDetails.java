@@ -12,9 +12,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.facebook.login.LoginManager;
 import com.firebase.client.Firebase;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -30,11 +33,13 @@ import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class ActivityFaceBookAndTwitterDetails extends AppCompatActivity {
 
     Button socialSubmit;
     EditText socialLastName, socialFirstName;
-    ImageView imageView;
+    CircleImageView imageView;
     private FirebaseAuth mAuth;
     FirebaseStorage storage;
     StorageReference mountainsRef, mountainImagesRef;
@@ -152,7 +157,18 @@ public class ActivityFaceBookAndTwitterDetails extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Toast.makeText(ActivityFaceBookAndTwitterDetails.this, "Cannot go back", Toast.LENGTH_LONG).show();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        user.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Toast.makeText(ActivityFaceBookAndTwitterDetails.this, "Account deleted", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(ActivityFaceBookAndTwitterDetails.this, ActivityMain.class);
+                startActivity(intent);
+                FirebaseAuth.getInstance().signOut();
+                LoginManager.getInstance().logOut();
+                finish();
+            }
+        });
 
     }
 }
